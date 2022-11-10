@@ -26,9 +26,11 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 Use this by pulling up your integrated terminal and running "node index.js". Then answer some simple questions and viola - README.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+<!-- link to video  -->
 
 ![screenshot](assets/images/screenshot.png)
+
+<!-- screenshot of finished readme example -->
 
 ## Credits
 

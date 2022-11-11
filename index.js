@@ -53,7 +53,9 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  inquirer.prompt(questions);
+  inquirer.prompt(questions).then(answers);
+
+  return;
 }
 
 // TODO: Create a function to initialize app

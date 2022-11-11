@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-let license = data.license;
+let license = data.license; // data is not defined in global scope. but it is defined in the generateMarkdown function.
 
 function renderLicenseBadge(license) {
   const badge = {
@@ -38,6 +38,13 @@ function generateMarkdown(data) {
 
 ${data.description}
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
 ## Installation
 
 ${data.installation}
@@ -52,7 +59,7 @@ ${data.credits}
 
 ## License
 
-${data.license}
+${renderLicenseSection()}
 
 ## Features
 
@@ -66,6 +73,24 @@ ${data.contribute}
 
 ${data.tests}
 `;
+
+  //
+  fs.writeFile(
+    "README.md",
+    generateMarkdown(
+      title,
+      description,
+      intallation,
+      usage,
+      credits,
+      license,
+      features,
+      contribute,
+      tests
+    )
+  );
+
+  // writeToFile();???????????????
 }
 
 module.exports = generateMarkdown;

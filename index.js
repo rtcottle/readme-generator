@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require(`./utils/generateMarkdown`);
+const generateMarkdown = require(`./utils/generateMarkdown`); //this is pulling the generateMarkdown function from the generateMarkdown.js.
 
 const questions = [
   {

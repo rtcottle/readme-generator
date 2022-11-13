@@ -15,8 +15,7 @@ function renderLicenseBadge(license) {
   if (license) {
     badge;
   }
-  console.log(license);
-  // user selected license =
+  console.log(badge);
 }
 
 // TODO: Create a function that returns the license link
@@ -28,21 +27,47 @@ function renderLicenseLink(license) {
     Public: "(https://opendatacommons.org/licenses/pddl/)",
     None: "",
   };
+  if (!license) {
+    ("");
+  }
+  if (license) {
+    URL;
+  }
+  console.log(URL);
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  // renderLicenseBadge() + renderLicenseLink() = license
+  if (!license) {
+    ("");
+  }
+  if (license) {
+    renderLicenseBadge();
+    renderLicenseLink();
+  }
+  console.log(license);
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  const {
+    title,
+    description,
+    installation,
+    usage,
+    credits,
+    renderLicenseSection,
+    features,
+    contribute,
+    tests,
+  } = data;
+
+  return `# ${title}
 
 ## Description
 
-${data.description}
+${description}
 
 ## Table of Contents
 
@@ -53,15 +78,15 @@ ${data.description}
 
 ## Installation
 
-${data.installation}
+${installation}
 
 ## Usage
 
-${data.usage}
+${usage}
 
 ## Credits
 
-${data.credits}
+${credits}
 
 ## License
 
@@ -69,15 +94,15 @@ ${renderLicenseSection()}
 
 ## Features
 
-${data.features}
+${features}
 
 ## How to Contribute
 
-${data.contribute}
+${contribute}
 
 ## Tests
 
-${data.tests}
+${tests}
 `;
 }
 

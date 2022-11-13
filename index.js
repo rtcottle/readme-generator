@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require(`./utils/generateMarkdown`); //this is pulling the generateMarkdown function from the generateMarkdown.js.
+const { generateMarkdown } = require(`./utils/generateMarkdown`); //this is pulling the generateMarkdown function from the generateMarkdown.js.
 
 const questions = [
   {
@@ -53,35 +53,21 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  const fileName = "README.md";
-  fs.writeFile(
-    fileName,
-    JSON.stringify(
-      generateMarkdown(
-        data,
-        title,
-        description,
-        installation,
-        usage,
-        credits,
-        license,
-        features,
-        contribute,
-        tests
-      )
-    )
-  );
+  // const fileName = "README.md"; TODO: ask why this is the way it is.
+  inquirer.prompt(questions).then((data) => {
+    const markdown = generateMarkdown(data);
+    console.log(markdown);
+    console.log("answers from questions line 5 >>:", data);
+    (err) => (err ? console.error(err) : console.log("Success"));
+    fs.writeFile(fileName, JSON.stringify(markdown));
+  });
 
   return;
 }
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
-    writeToFile();
-    (err) => (err ? console.error(err) : console.log("Success"));
-  });
+  writeToFile();
 }
 
 // Function call to initialize app

@@ -55,7 +55,7 @@ const questions = [
 function writeToFile(fileName, data) {
   // const fileName = "README.md"; TODO: ask why this is the way it is.
   inquirer.prompt(questions).then((data) => {
-    const markdown = generateMarkdown(data);
+    // const markdown = generateMarkdown(data); TODO: ask why this isn't coming over.
     console.log(markdown);
     console.log("answers from questions line 5 >>:", data);
     (err) => (err ? console.error(err) : console.log("Success"));

@@ -57,7 +57,7 @@ function generateMarkdown(data) {
     installation,
     usage,
     credits,
-    renderLicenseSection,
+    license,
     features,
     contribute,
     tests,
@@ -90,7 +90,7 @@ ${credits}
 
 ## License
 
-${renderLicenseSection()}
+${renderLicenseSection(license)}
 
 ## Features
 

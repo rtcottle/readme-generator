@@ -87,6 +87,7 @@ ${description}
 - [Features](#features)
 - [How To Contribute](#how-to-contribute)
 - [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 

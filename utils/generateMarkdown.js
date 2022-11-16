@@ -5,7 +5,8 @@ function renderLicenseBadge(license) {
     GNU: "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]",
     Public:
       "[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)]",
-    None: "",
+    Apache:
+      "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]",
   };
 
   if (!license) {
@@ -22,7 +23,7 @@ function renderLicenseLink(license) {
     MIT: "(https://opensource.org/licenses/MIT)",
     GNU: "(https://www.gnu.org/licenses/gpl-3.0)",
     Public: "(https://opendatacommons.org/licenses/pddl/)",
-    None: "",
+    Apache: "(https://opensource.org/licenses/Apache-2.0)",
   };
   if (!license) {
     ("");

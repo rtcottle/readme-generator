@@ -31,7 +31,7 @@ const questions = [
     name: "license",
     type: "list",
     message: "What license is being used?",
-    choices: ["MIT", "GNU", "Public", "None"],
+    choices: ["MIT", "GNU", "Public", "Apache"],
   },
   {
     name: "features",

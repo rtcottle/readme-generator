@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { generateMarkdown } = require(`./utils/generateMarkdown`); //this is pulling the generateMarkdown function from the generateMarkdown.js.
+const generateMarkdown = require(`./utils/generateMarkdown`); //this is pulling the generateMarkdown function from the generateMarkdown.js.
 const questions = [
   {
     name: "title",
@@ -68,7 +68,7 @@ async function getPromptData() {
 // TODO: Create a function to initialize app
 async function init() {
   const promptData = await getPromptData();
-  console.log(generateMarkdown(promptData));
+  console.log("index.js line 71: >>", generateMarkdown(promptData));
   // writeToFile();
 }
 

@@ -13,9 +13,9 @@ function renderLicenseBadge(license) {
     ("");
   }
   if (license) {
-    badge;
+    console.log("mkdwn line 18: >>", license);
+    return badge;
   }
-  console.log(badge);
 }
 
 // TODO: Create a function that returns the license link
@@ -31,9 +31,9 @@ function renderLicenseLink(license) {
     ("");
   }
   if (license) {
-    URL;
+    return URL;
   }
-  console.log(URL);
+  console.log("mkdwn line 36: >>", license);
 }
 
 // TODO: Create a function that returns the license section of README
@@ -43,10 +43,9 @@ function renderLicenseSection(license) {
     ("");
   }
   if (license) {
-    renderLicenseBadge();
-    renderLicenseLink();
+    return renderLicenseBadge(license).concat(renderLicenseLink(license));
   }
-  console.log(license);
+  // console.log("mkdwn line 49: >>", renderLicenseSection(license));
 }
 
 // TODO: Create a function to generate markdown for README
@@ -62,7 +61,6 @@ function generateMarkdown(data) {
     contribute,
     tests,
   } = data;
-  //TODO: is this syntax the correct version?
   return `# ${title}
 
 ## Description
@@ -90,7 +88,7 @@ ${credits}
 
 ## License
 
-${renderLicenseSection(license)}
+This project is under the ${renderLicenseSection(license)}.
 
 ## Features
 

@@ -51,15 +51,10 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//   // const fileName = "README.md"; TODO: ask why this is the way it is.
-//   console.log(data);
-//   const markdown = generateMarkdown(data);
-//   console.log(markdown);
-//   console.log("answers from questions line 5 >>:", data);
-//   fs.writeFile(fileName, JSON.stringify(markdown));
-//   return;
-// }
+function writeToFile(fileName, data) {
+  fs.writeFileSync(fileName, data);
+  return;
+}
 
 async function getPromptData() {
   return await inquirer.prompt(questions);
@@ -68,8 +63,11 @@ async function getPromptData() {
 // TODO: Create a function to initialize app
 async function init() {
   const promptData = await getPromptData();
-  console.log("index.js line 71: >>", generateMarkdown(promptData));
-  // writeToFile();
+  const markdown = generateMarkdown(promptData);
+  //test to make sure data is working.
+  // console.log(markdown);
+  writeToFile("README.md", markdown);
+  console.log("Success!");
 }
 
 // Function call to initialize app

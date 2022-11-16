@@ -37,6 +37,7 @@ function renderLicenseSection(license) {
   if (!license) {
     ("");
   }
+  //if there is a valid license, return badge and url
   if (license) {
     return `This project is under the ${renderLicenseBadge(
       license
@@ -69,6 +70,9 @@ ${description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Features](#features)
+- [How To Contribute](#how-to-contribute)
+- [Tests](#tests)
 
 ## Installation
 

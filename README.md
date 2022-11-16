@@ -32,8 +32,8 @@ Link to video of this program working: https://drive.google.com/file/d/1CFXFXSCE
 
 ## Credits
 
-README formatting: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide/
-Inquirer: https://www.npmjs.com/package/inquirer
+- README formatting: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide/
+- Inquirer: https://www.npmjs.com/package/inquirer
 
 ## License
 

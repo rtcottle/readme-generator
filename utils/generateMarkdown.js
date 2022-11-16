@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// generates the license badge
 function renderLicenseBadge(license) {
   const badge = {
     MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]",
@@ -13,13 +12,11 @@ function renderLicenseBadge(license) {
     ("");
   }
   if (license) {
-    console.log("mkdwn line 18: >>", license);
-    return badge;
+    return badge[license];
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// generates the license URL
 function renderLicenseLink(license) {
   const URL = {
     MIT: "(https://opensource.org/licenses/MIT)",
@@ -31,24 +28,23 @@ function renderLicenseLink(license) {
     ("");
   }
   if (license) {
-    return URL;
+    return URL[license];
   }
-  console.log("mkdwn line 36: >>", license);
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// combines the badge and URL sections
 function renderLicenseSection(license) {
   if (!license) {
     ("");
   }
   if (license) {
-    return renderLicenseBadge(license).concat(renderLicenseLink(license));
+    return `This project is under the ${renderLicenseBadge(
+      license
+    )}${renderLicenseLink(license)}.`;
   }
-  // console.log("mkdwn line 49: >>", renderLicenseSection(license));
 }
 
-// TODO: Create a function to generate markdown for README
+// this generates the markdown data with the user inputs
 function generateMarkdown(data) {
   const {
     title,
@@ -88,7 +84,7 @@ ${credits}
 
 ## License
 
-This project is under the ${renderLicenseSection(license)}.
+${renderLicenseSection(license)}
 
 ## Features
 

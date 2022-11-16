@@ -55,7 +55,7 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
+// function that writes readme file
 function writeToFile(fileName, data) {
   fs.writeFileSync(fileName, data);
   return;
@@ -65,7 +65,7 @@ async function getPromptData() {
   return await inquirer.prompt(questions);
 }
 
-// TODO: Create a function to initialize app
+// function that initializes app
 async function init() {
   const promptData = await getPromptData();
   const markdown = generateMarkdown(promptData);

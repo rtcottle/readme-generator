@@ -46,6 +46,18 @@ function renderLicenseSection(license) {
   }
 }
 
+function renderQuestions(questions) {
+  if (!questions) {
+    ("");
+  }
+  if ((questions = "rtcottle")) {
+    return `Reach me through my GitHub-rtcottle here: https://github.com/rtcottle`;
+  }
+  if ((questions = "betadev.2023@gmail.com")) {
+    return `Contact me at my email: betadev.2023@gmail.com`;
+  }
+}
+
 // this generates the markdown data with the user inputs
 function generateMarkdown(data) {
   const {
@@ -58,8 +70,9 @@ function generateMarkdown(data) {
     features,
     contribute,
     tests,
+    questions,
   } = data;
-  return `# ${title}
+  return `# ${data.title}
 
 ## Description
 
@@ -102,6 +115,10 @@ ${contribute}
 ## Tests
 
 ${tests}
+
+## Questions
+
+${renderQuestions(questions)}
 `;
 }
 

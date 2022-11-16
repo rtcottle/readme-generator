@@ -48,6 +48,11 @@ const questions = [
     type: "input",
     message: "How can the project be tested?",
   },
+  {
+    name: "questions",
+    type: "input",
+    message: "Ask questions here:",
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -66,7 +71,7 @@ async function init() {
   const markdown = generateMarkdown(promptData);
   //test to make sure data is working.
   // console.log(markdown);
-  writeToFile("README.md", markdown);
+  writeToFile(`README.md`, markdown);
   console.log("Success!");
 }
 
